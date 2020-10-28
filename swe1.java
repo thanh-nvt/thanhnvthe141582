@@ -2,15 +2,16 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("The 45 sequence fibonacci");
-        fibonnaciHelper(45, 1, 0);
+        for(int i=0;i<45;i++){
+		System.out.print(fibonnaci(i));
+	}
     }
 
-    public static int fibonnaciHelper(int term, int lower, int higher) {
-        if (term < 2) {
-            return higher;
+    public static int fibonnaci(int value) {
+        if (value >=0 && value < 2) {
+            return value;
         }
-        System.out.print(higher + " ");
-        return fibonnaciHelper(term - 1, higher, higher + lower);
+        else return fibonnaci(value -1) + fibonnaci(value-2);
     }
 
 }
